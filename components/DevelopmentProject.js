@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function DevelopmentProject({ posts }) {
     return(
         <div className="bg-white m-8">
@@ -8,6 +10,10 @@ export default function DevelopmentProject({ posts }) {
                         {post.title}
                     </h1>
                     <a href={post.githuburl} target="_blank">깃헙 링크(클릭)</a>
+                    <br />
+                    <Link href={"/posts/"+post.id}>
+                        <a>더 보기(클릭)</a>
+                    </Link>
                 </div>
                 );
             })}
